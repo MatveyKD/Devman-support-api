@@ -30,6 +30,12 @@ SESSION_ID - ваш id в тг. Получить можно у [бота](https:
 
 VK_GROUP_TOKEN - токен бота вк.
 
+
+Запустите файл командой `python3 create_intent.py`. Он загрузит в dialogflow тестовые данные.
+Запустите файл тг бота командой `python3 tg_bot.py`
+Запустите файл вк бота командой `python3 vk_bot.py`
+
+
 ## Пример успешного запуска
 
 ![screen](https://github.com/MatveyKD/Devman-support-api/blob/main/Images/WorkingExample.gif)

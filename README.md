@@ -39,3 +39,4 @@ VK_GROUP_TOKEN - токен бота вк.
 ## Пример успешного запуска
 
 ![screen](https://github.com/MatveyKD/Devman-support-api/blob/main/Images/WorkingExample.gif)
+![screenvk](https://github.com/MatveyKD/Devman-support-api/blob/main/Images/WorkingExampleVK.gif)

@@ -5,7 +5,6 @@ import random
 from dotenv import load_dotenv
 from google.cloud import dialogflow
 
-load_dotenv()
 
 
 def answer(event, vk_api):
@@ -44,6 +43,7 @@ def answer(event, vk_api):
 
 
 if __name__ == "__main__":
+    load_dotenv()
     vk_session = vk_api.VkApi(token=os.environ["VK_GROUP_TOKEN"])
     vk_api = vk_session.get_api()
     longpoll = VkLongPoll(vk_session)

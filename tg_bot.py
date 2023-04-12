@@ -6,7 +6,6 @@ from google.cloud import dialogflow
 from telegram import Update, ForceReply
 from telegram.ext import Updater, CommandHandler, MessageHandler, Filters, CallbackContext
 
-load_dotenv()
 
 logging.basicConfig(
     format='%(asctime)s - %(name)s - %(levelname)s - %(message)s', level=logging.INFO
@@ -57,6 +56,8 @@ def answer(update: Update, context: CallbackContext) -> None:
 
 
 def main() -> None:
+    load_dotenv()
+
     updater = Updater(os.getenv("TG_BOT_TOKEN"))
 
     dispatcher = updater.dispatcher

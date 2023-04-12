@@ -35,15 +35,15 @@ def create_intent(project_id, display_name, training_phrases_parts, message_text
 
 if __name__ == "__main__":
     load_dotenv()
-    
+
     data = {}
     with open("questions.json", "r", encoding="UTF-8") as read_file:
         data = json.load(read_file)
 
-    for question in data:
+    for question_text, question_data in data.items():
         create_intent(
             project_id=os.getenv("PROJECT_ID"),
-            display_name=question,
-            training_phrases_parts=data[question]["questions"],
-            message_texts=[data[question]["answer"]]
+            display_name=question_text,
+            training_phrases_parts=question_data["questions"],
+            message_texts=question_data["answer"]
         )

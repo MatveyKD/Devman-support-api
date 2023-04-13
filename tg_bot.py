@@ -8,10 +8,6 @@ from telegram.ext import Updater, CommandHandler, MessageHandler, Filters, Callb
 from QuestionsAnswerBot import answer_message
 
 
-logging.basicConfig(
-    format='%(asctime)s - %(name)s - %(levelname)s - %(message)s', level=logging.INFO
-)
-
 logger = logging.getLogger(__name__)
 
 
@@ -36,12 +32,15 @@ def answer(update: Update, context: CallbackContext) -> None:
 def main() -> None:
     load_dotenv()
 
+    logging.basicConfig(
+        format='%(asctime)s - %(name)s - %(levelname)s - %(message)s', level=logging.INFO
+    )
+
     updater = Updater(os.getenv("TG_BOT_TOKEN"))
 
     dispatcher = updater.dispatcher
 
     dispatcher.add_handler(CommandHandler("start", start))
-    dispatcher.add_handler(CommandHandler("help", help_command))
     dispatcher.add_handler(MessageHandler(Filters.text, answer))
 
     updater.start_polling()

@@ -23,12 +23,15 @@ Python3 должен быть установлен. Далее загрузит�
 Рядом с программой создайте файл .env. Его содержимое должно быть похожим на это:
 
     TG_BOT_TOKEN=60864792:AAGvyNeBsE76vbf7svbVBwsdvf8sv
+    QUESTIONS_FILE_PATH=questions.json
     PROJECT_ID=test-rjv7
     SESSION_ID=87645643
     VK_GROUP_TOKEN=vk1.a.gLGusdbvuVYDBNIds5v67usdsBZNICMsdcv
 
 
 TG_BOT_TOKEN - токен бота тг, полученный у [BotFather](https://t.me/BotFather).
+
+QUESTIONS_FILE_PATH - путь до файла с тестовыми вопросами. По умолчанию - questions.json (файл из репозитория)
 
 PROJECT_ID - id GoogleCloud проекта.
 

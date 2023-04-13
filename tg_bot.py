@@ -22,8 +22,8 @@ def start(update: Update, context: CallbackContext) -> None:
 def answer(update: Update, context: CallbackContext) -> None:
     message_text = answer_message(
         update.message.text,
-        os.getenv("PROJECT_ID"),
-        os.getenv("SESSION_ID")
+        context.bot_data["project_id"],
+        context.bot_data["session_id"],
     )
 
     update.message.reply_text(message_text)
@@ -33,12 +33,19 @@ def main() -> None:
     load_dotenv()
 
     logging.basicConfig(
-        format='%(asctime)s - %(name)s - %(levelname)s - %(message)s', level=logging.INFO
+        format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
+        level=logging.INFO
     )
+
+    project_id = os.getenv("PROJECT_ID")
+    session_id = os.getenv("SESSION_ID")
 
     updater = Updater(os.getenv("TG_BOT_TOKEN"))
 
     dispatcher = updater.dispatcher
+
+    dispatcher.bot_data["project_id"] = project_id
+    dispatcher.bot_data["session_id"] = session_id
 
     dispatcher.add_handler(CommandHandler("start", start))
     dispatcher.add_handler(MessageHandler(Filters.text, answer))

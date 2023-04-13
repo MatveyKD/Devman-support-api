@@ -37,7 +37,7 @@ if __name__ == "__main__":
     load_dotenv()
 
     data = {}
-    with open("questions.json", "r", encoding="UTF-8") as reading_file:
+    with open(os.getenv("QUESTIONS_FILE_PATH"), "r", encoding="UTF-8") as reading_file:
         data = json.load(reading_file)
 
     for question_text, question_data in data.items():

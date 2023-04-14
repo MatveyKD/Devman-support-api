@@ -37,8 +37,8 @@ if __name__ == "__main__":
     load_dotenv()
 
     data = {}
-    with open(os.getenv("QUESTIONS_FILE_PATH", "questions.json"), "UTF-8") as reading_file:
-        data = json.load(reading_file)
+    with open(os.getenv("QUESTIONS_FILE_PATH", "questions.json"), "UTF-8") as file:
+        data = json.load(file)
 
     for question_text, question_data in data.items():
         create_intent(

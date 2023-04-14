@@ -4,11 +4,11 @@ import os
 import random
 from dotenv import load_dotenv
 
-from GetDFAnswer import answer_message
+from GetDFAnswer import get_answer
 
 
 def answer(event, vk_api, project_id, session_id):
-    message_text = answer_message(
+    message_text = get_answer(
         event.text,
         project_id,
         session_id

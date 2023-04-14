@@ -5,7 +5,7 @@ from dotenv import load_dotenv
 from telegram import Update, ForceReply
 from telegram.ext import Updater, CommandHandler, MessageHandler, Filters, CallbackContext
 
-from GetDFAnswer import answer_message
+from GetDFAnswer import get_answer
 
 
 logger = logging.getLogger(__name__)
@@ -20,7 +20,7 @@ def start(update: Update, context: CallbackContext) -> None:
 
 
 def answer(update: Update, context: CallbackContext) -> None:
-    message_text = answer_message(
+    message_text = get_answer(
         update.message.text,
         context.bot_data["project_id"],
         context.bot_data["session_id"],

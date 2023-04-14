@@ -1,7 +1,7 @@
 from google.cloud import dialogflow
 
 
-def answer_message(message_text, project_id, session_id):
+def get_answer(message_text, project_id, session_id):
     session_client = dialogflow.SessionsClient()
 
     session = session_client.session_path(project_id, session_id)

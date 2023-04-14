@@ -5,7 +5,7 @@ from dotenv import load_dotenv
 from telegram import Update, ForceReply
 from telegram.ext import Updater, CommandHandler, MessageHandler, Filters, CallbackContext
 
-from QuestionsAnswerBot import answer_message
+from GetDFAnswer import answer_message
 
 
 logger = logging.getLogger(__name__)

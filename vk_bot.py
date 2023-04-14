@@ -4,7 +4,7 @@ import os
 import random
 from dotenv import load_dotenv
 
-from QuestionsAnswerBot import answer_message
+from GetDFAnswer import answer_message
 
 
 def answer(event, vk_api, project_id, session_id):

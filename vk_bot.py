@@ -14,11 +14,12 @@ def answer(event, vk_api, project_id, session_id):
         session_id
     )
 
-    vk_api.messages.send(
-        user_id=event.user_id,
-        message=message_text,
-        random_id=random.randint(1, 1000)
-    )
+    if message_text:
+        vk_api.messages.send(
+            user_id=event.user_id,
+            message=message_text,
+            random_id=random.randint(1, 1000)
+        )
 
 
 if __name__ == "__main__":

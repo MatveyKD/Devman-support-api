@@ -26,7 +26,8 @@ def answer(update: Update, context: CallbackContext) -> None:
         context.bot_data["session_id"],
     )
 
-    update.message.reply_text(message_text)
+    if message_text:
+        update.message.reply_text(message_text)
 
 
 def main() -> None:

@@ -7,11 +7,11 @@ from dotenv import load_dotenv
 from GetDFAnswer import get_answer
 
 
-def answer(event, vk_api, project_id, session_id):
+def answer(event, vk_api, project_id):
     message_text = get_answer(
         event.text,
         project_id,
-        session_id
+        event.user_id
     )
 
     if message_text:
@@ -26,7 +26,6 @@ if __name__ == "__main__":
     load_dotenv()
 
     project_id = os.getenv("PROJECT_ID")
-    session_id = os.getenv("SESSION_ID")
 
     vk_session = vk_api.VkApi(token=os.environ["VK_GROUP_TOKEN"])
     vk_api = vk_session.get_api()
@@ -36,6 +35,5 @@ if __name__ == "__main__":
             answer(
                 event,
                 vk_api,
-                project_id,
-                session_id
+                project_id
             )

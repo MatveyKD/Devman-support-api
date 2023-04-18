@@ -23,7 +23,7 @@ def answer(update: Update, context: CallbackContext) -> None:
     message_text = get_answer(
         update.message.text,
         context.bot_data["project_id"],
-        context.bot_data["session_id"],
+        update.message.chat_id
     )
 
     if message_text:
@@ -39,14 +39,12 @@ def main() -> None:
     )
 
     project_id = os.getenv("PROJECT_ID")
-    session_id = os.getenv("SESSION_ID")
 
     updater = Updater(os.getenv("TG_BOT_TOKEN"))
 
     dispatcher = updater.dispatcher
 
     dispatcher.bot_data["project_id"] = project_id
-    dispatcher.bot_data["session_id"] = session_id
 
     dispatcher.add_handler(CommandHandler("start", start))
     dispatcher.add_handler(MessageHandler(Filters.text, answer))

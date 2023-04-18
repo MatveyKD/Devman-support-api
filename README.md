@@ -25,7 +25,6 @@ Python3 должен быть установлен. Далее загрузит�
     TG_BOT_TOKEN=60864792:AAGvyNeBsE76vbf7svbVBwsdvf8sv
     QUESTIONS_FILE_PATH=questions.json
     PROJECT_ID=test-rjv7
-    SESSION_ID=87645643
     VK_GROUP_TOKEN=vk1.a.gLGusdbvuVYDBNIds5v67usdsBZNICMsdcv
 
 
@@ -34,8 +33,6 @@ TG_BOT_TOKEN - токен бота тг, полученный у [BotFather](htt
 QUESTIONS_FILE_PATH - путь до файла с тестовыми вопросами. По умолчанию - questions.json (файл из репозитория)
 
 PROJECT_ID - id GoogleCloud проекта.
-
-SESSION_ID - ваш id в тг. Получить можно у [бота](https://t.me/getmyid_bot)
 
 VK_GROUP_TOKEN - токен бота вк.
 

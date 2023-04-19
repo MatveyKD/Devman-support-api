@@ -26,8 +26,7 @@ def answer(update: Update, context: CallbackContext) -> None:
         update.message.chat_id
     )
 
-    if message_text:
-        update.message.reply_text(message_text)
+    update.message.reply_text(message_text)
 
 
 def main() -> None:

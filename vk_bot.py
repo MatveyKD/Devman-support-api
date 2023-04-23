@@ -8,16 +8,16 @@ from GetDFAnswer import get_answer
 
 
 def answer(event, vk_api, project_id):
-    message_text = get_answer(
+    DF_asnwer = get_answer(
         event.text,
         project_id,
         event.user_id
     )
 
-    if message_text:
+    if not DF_asnwer.intent.is_fallback:
         vk_api.messages.send(
             user_id=event.user_id,
-            message=message_text,
+            message=DF_asnwer.fulfillment_text,
             random_id=random.randint(1, 1000)
         )
 

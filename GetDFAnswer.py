@@ -16,7 +16,4 @@ def get_answer(message_text, project_id, session_id):
             "query_input": query_input
         }
     )
-    if not response.query_result.intent.is_fallback:
-        return response.query_result.fulfillment_text
-    else:
-        return None
+    return response.query_result

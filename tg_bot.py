@@ -20,13 +20,13 @@ def start(update: Update, context: CallbackContext) -> None:
 
 
 def answer(update: Update, context: CallbackContext) -> None:
-    message_text = get_answer(
+    DF_answer = get_answer(
         update.message.text,
         context.bot_data["project_id"],
         update.message.chat_id
     )
 
-    update.message.reply_text(message_text)
+    update.message.reply_text(DF_answer.fulfillment_text)
 
 
 def main() -> None:
